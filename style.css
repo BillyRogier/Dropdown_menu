@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:ital,wght@0,400;0,500;0,700;1,300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #201e35;
+}
+
+.dropdown{
+    width: 160px;
+    height: 40px;
+    position: relative;
+    background-color: #2a4dc7;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px solid #fff;
+    border-radius: 7px;
+}
+
+.dropdown p{
+    font: normal 500 17px Roboto;
+}
+
+.dropdown input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.dropdown .drop-item{
+    position: absolute;
+    top: 60px;
+    width: 160px;
+    display: flex;
+    transform-origin: top;
+    transform: scale(0);
+    transition: all .3s;
+    flex-direction: column;
+    margin-left: -4px;
+}
+
+.item{
+    text-decoration: none;
+    color: #fff;
+    background-color: #2a4dc7;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 7px;
+    border: 2px solid #fff;
+    font-family: Roboto;
+    font-weight: 400;
+    border-radius: 7px;
+}
+
+.item:hover{
+    background-color: #2641a1;
+    transition: all .3s;
+}
+
+.dropdown input:checked ~ .drop-item{
+    transform: scale(1);
+}
+
+i{
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.dropdown input:checked ~ i{
+    transform: rotate(180deg);
+}
